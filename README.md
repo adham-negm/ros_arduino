@@ -1,11 +1,20 @@
-ros_arduino[![Build Status](https://travis-ci.org/tonybaltovski/ros_arduino.svg?branch=indigo-devel)](https://travis-ci.org/tonybaltovski/ros_arduino)
-===========
-## Overview ##
-ros_arduino provides a simple interface for a mobile robot using an Arduino(-like) mircocontroller using [rosserial](https://github.com/ros-drivers/rosserial).
+* this fork contains ros package for a base_link node controlling a differential robot and its corrisponding arduino code
 
-### ros_arduino_base
-This package provides an interface to a two wheel differential mobile base with encoders to produce an odometry estimate.  You can copy this to your sketchbook or set your sketchbook location to the firmware folder.  The firmware folder contains a script `install_ros_lib.sh` to generate the ros_lib and other libraries that are needed.  In `two_wheel_base.ino` you can configure your base's settings.
 
-### ros_arduino_imu
-This package provides an interface for various I2C IMUs to ROS.  The firmware that needs to uploaded to the Arduino(-like) mircocontroller is in the firmware folder.  You can copy this to your sketchbook or set your sketchbook location to the firmware folder.  The firmware folder contains a script `install_ros_lib.sh` to generate the ros_lib that is needed.  In `imu_configuration.h` you can configure your IMU.
+- the Arduino folder contains the arduino code and the libraries you will need for it to compile
+
+- the ros_arduino contains the ros packages, just create your work space :http://wiki.ros.org/catkin/Tutorials/create_a_workspace
+
+cd ~/catkin_ws/src
+cp -r <ros_arduino/ros_arduino> . #copy "ros_arduino" directory over to the "src" folder
+cd ~/catkin_ws
+catkin_make
+source ~/catkin_ws/devel/setup.bash # you could add this line to .bashrc if your planning on using this package frequently 
+
+
+
+* Now you should be able to connect your arduino compile and upload the code and your base_link node using:
+roslaunch ros_arduino_base base_bringup.launch 
+
+
 
