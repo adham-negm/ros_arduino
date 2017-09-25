@@ -5,11 +5,11 @@
 
 - the ros_arduino contains the ros packages, just create your work space :http://wiki.ros.org/catkin/Tutorials/create_a_workspace
 
-cd ~/catkin_ws/src
-cp -r <ros_arduino/ros_arduino> . #copy "ros_arduino" directory over to the "src" folder
-cd ~/catkin_ws
-catkin_make
-source ~/catkin_ws/devel/setup.bash # you could add this line to .bashrc if your planning on using this package frequently 
+- cd ~/catkin_ws/src
+- cp -r <ros_arduino/ros_arduino> . #copy "ros_arduino" directory over to the "src" folder
+- cd ~/catkin_ws
+- catkin_make
+- source ~/catkin_ws/devel/setup.bash # you could add this line to .bashrc if your planning on using this package frequently 
 
 
 
